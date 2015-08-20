@@ -77,13 +77,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/kernel:kernel \
-    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom \
-    $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/recovery/etc/init.qti.carrier.rc:root/init.qti.carrier.rc \
-    $(LOCAL_PATH)/recovery/etc/init.target.rc:root/init.target.rc
-
 # Graphics
 PRODUCT_PACKAGES += \
 	copybit.msm8916 \
@@ -133,6 +126,20 @@ PRODUCT_PACKAGES += \
 # Radio
 PRODUCT_BOOT_JARS += \
     qcrilhook
+    
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh \
+    init.qcom.coex.sh
+
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.power.rc \
+    init.qcom.usb.rc \
+    init.recovery.qcom.rc \
+    ueventd.qcom.rc
+
 
 # Off-mode charging
 PRODUCT_PACKAGES += \
